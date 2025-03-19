@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Push elements to both ends */
+    align-items: center;
+    width: 100%; /* Ensure it spans the full width */
+    background-color: #0a0a23; /* Dark background */
+    color: white;
+    padding: 15px 30px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding doesn't affect width */
+  }
+  
+  .navbar h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    transition: background 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+  }
+  

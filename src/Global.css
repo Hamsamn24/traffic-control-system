@@ -1,0 +1,633 @@
+/* Global Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #212020;
+  color: #333;
+}
+
+/* Background Images */
+.login-container {
+  background: url('/images/traffic-jam.mp4') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: blue;
+}
+
+/* .traffic-control-container {
+  background: url('/images/traffic-signal.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+} */
+/* .traffic-control-container {
+  background: url('/images/traffic-signal.jpg') no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+} */
+.traffic-control-container {
+  background: url('traffic1.jpg') no-repeat center center/cover;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #1a1a2e;
+  color: white;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #ffcc00;
+}
+
+/* Dashboard Layout */
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full viewport height */
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Optional: Make TrafficSignal and LiveFeed centered */
+.traffic-signal, .live-feed {
+  margin: 20px 0;
+}
+
+/* Traffic Signal Control */
+.control-panel {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 2rem auto;
+  max-width: 100%;
+}
+
+.control-panel button {
+  margin: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background 0.3s;
+}
+
+.control-panel .red { background-color: #ff4d4d; color: white; }
+.control-panel .yellow { background-color: #ffcc00; color: black; }
+.control-panel .green { background-color: #28a745; color: white; }
+
+.control-panel button:hover {
+  opacity: 0.8;
+}
+
+/* Live Feed Styling */
+.live-feed {
+  margin: 2rem auto;
+  padding: 2rem;
+  /* background: rgb(5, 5, 5);  */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 600px;
+}
+
+.live-feed iframe {
+  width: 600px;
+  height: 315px;
+  border-radius: 0px;
+}
+
+/* Traffic Signal */
+.traffic-signal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+}
+
+.traffic-signal .signal {
+  width: 50px;
+  height: 50px;
+  margin: 10px;
+  border-radius: 50%;
+}
+
+.traffic-signal .red { background: red; }
+.traffic-signal .yellow { background: yellow; }
+.traffic-signal .green { background: green; }
+.traffic-signal .active {
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.8);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    text-align: center;
+  }
+  .control-panel {
+    width: 90%;
+  }
+}
+
+/* 🔹 Fullscreen Container */
+.login-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Centered Login Box */
+.login-container {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: rgb(8, 7, 7);
+  width: 90px; /* Adjust for responsiveness */
+  max-width: 400px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Background Video Styling */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* 🔹 Fullscreen Login Page */
+.login-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 🔹 Centered Login Box */
+.login-container {
+  /* background: rgba(177, 173, 173, 0.75); /* Semi-transparent background */
+  padding: 3rem;
+  border-radius: 12px;
+  text-align: center;
+  color: white;
+  width: 90%;
+  max-width: 400px;
+  box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* 🔹 Form Styling */
+input,
+button {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+input {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+button {
+  background-color: #ff4500;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+
+.error {
+  color: red;
+}
+/* Emergency Alert Popup */
+.alert-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.alert-popup h2 {
+  color: red;
+}
+
+.alert-popup button {
+  background: #ff4500;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.alert-popup button:hover {
+  background: #d32f2f;
+}
+
+/* Emergency Button */
+.emergency-button {
+  background: red;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.emergency-button:hover {
+  background: darkred;
+}
+/* Emergency Alert Popup */
+.alert-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.alert-popup h2 {
+  color: red;
+}
+
+.alert-popup button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.alert-popup button:hover {
+  background: #218838;
+}
+
+/* Simulate Message Button */
+.receive-message-button {
+  background: orange;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+.receive-message-button:hover {
+  background: darkorange;
+}
+
+/* Traffic Light Signals */
+.traffic-signal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.signal {
+  width: 50px;
+  height: 50px;
+  margin: 5px;
+  border-radius: 50%;
+  background: gray;
+}
+
+.signal.red { background: red; }
+.signal.yellow { background: yellow; }
+.signal.green { background: green; }
+.signal.active {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+/* Emergency Alert Popup */
+.alert-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  color: black;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  z-index: 1000;
+}
+
+.alert-popup h2 {
+  color: red;
+}
+
+.alert-popup select {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  font-size: 1rem;
+}
+
+.alert-popup button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.alert-popup button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}
+
+/* Traffic Signals 
+.traffic-signals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}*/
+
+.road-signal {
+  text-align: center;
+}
+
+.signal {
+  width: 50px;
+  height: 50px;
+  margin: 5px auto;
+  border-radius: 50%;
+  background: gray;
+}
+
+.signal.red { background: red; }
+.signal.yellow { background: yellow; }
+.signal.green { background: green; }
+.signal.active {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+/* Road Signal Display 
+.road-signal {
+  text-align: center;
+  margin-bottom: 20px;  /* Adds space between road names 
+}*/
+
+.road-signal p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 10px;  /* Adds space below the road name */
+}
+/* .road-names {
+  display: flex;
+  justify-content: center;
+  gap: 120px; /* Adjust the space between names */
+  /* font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 50px;
+}  */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #111;
+  padding: 15px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  font-size: 18px;
+  z-index: 1000;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+}
+
+.navbar a:hover {
+  background: #ffcc00;
+  color: black;
+  border-radius: 5px;
+}
+.road-names {
+  display: flex;
+  justify-content: center;
+  gap: 120px; /* Adjust the space between names */
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px; /* Reduce margin-bottom for better spacing */
+}
+
+.traffic-signals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px; /* Reduce margin-top for better alignment */
+  gap: 120px; /* Ensure signals align properly with road names */
+}
+
+.road-signal {
+  text-align: center;
+  margin-bottom: 10px; /* Adds space between road names and signals */
+}
+/* .traffic-signals {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+  gap: 120px;
+  border: 10px solid rgb(10, 10, 10); /* Added border */
+  /* padding: 10px;
+  border-radius: 10px;
+} */
+
+/* .road-signal p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid rgb(20, 20, 20); Border for road names */
+  /* padding: 5px;
+  display: inline-block;
+  border-radius: 5px;
+} */
+
+/* Button for giving green signal */
+/* .green-signal-button {
+  background: green;
+  color: white;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.green-signal-button:disabled {
+  background: gray;
+  cursor: not-allowed;
+} */
+
+/* 🚦 Traffic Signal Styling */
+.traffic-signals {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  padding: 20px;
+  border: 3px solid white; /* Border around traffic signals */
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* 📍 Individual Road Styling */
+.road-signal {
+  text-align: center;
+  padding: 10px;
+  border: 2px solid white; /* Border around each road */
+  border-radius: 8px;
+  margin: 10px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.road-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  border: 2px solid white; /* Border around road names */
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+/* 🔴 Traffic Light Styling */
+.signal {
+  width: 50px;
+  height: 50px;
+  margin: 5px auto;
+  border-radius: 50%;
+  background: gray;
+  border: 3px solid white; /* Border for traffic lights */
+}
+
+.signal.red { background: red; }
+.signal.yellow { background: yellow; }
+.signal.green { background: green; }
+
+.signal.active {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+}
+
+/* 🎛 Green Signal Selection */
+.signal-control {
+  margin-top: 20px;
+  text-align: center;
+  padding: 20px;
+  border: 3px solid white; /* Border for control panel */
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  max-width: 400px;
+  margin: 20px auto;
+}
+
+.signal-control select,
+.signal-control button {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.signal-control button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.signal-control button:disabled {
+  background: gray;
+  cursor: not-allowed;
+}

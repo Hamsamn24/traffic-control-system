@@ -1,0 +1,114 @@
+/* Dashboard.css */
+html, body {
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  height: 100%; /* Ensure body takes full height */
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* Full height of the viewport */
+  width: 100%;
+  text-align: center;
+  padding: 2rem;
+  background: url('/traffic.jpg') no-repeat center center/cover; /* Background image */
+  color: white;
+  position: relative;
+}
+
+.dashboard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  z-index: 1; /* Ensure it is behind the content */
+}
+
+.dashboard > * {
+  position: relative;
+  z-index: 2; /* Ensure content is above the overlay */
+}
+
+.dashboard h1 {
+  font-size: 2.5rem; /* Large font size for the title */
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.counts-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Timeline Styles */
+.timeline-container {
+  width: 100%; /* Full width */
+  max-width: 800px; /* Maximum width for the timeline */
+  margin: 20px auto; /* Center the timeline */
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.timeline-scroll {
+  max-height: 300px; /* Limit height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  background: #2c2c2c; /* Background color for the scroll area */
+  border-radius: 8px;
+  padding: 15px;
+  color: white;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 100px 1fr 80px; /* Layout for timeline items */
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #404040; /* Divider line */
+}
+
+.timestamp {
+  font-size: 0.8em; /* Smaller font size for timestamps */
+  color: #aaa; /* Lighter color for timestamps */
+}
+
+.road {
+  font-weight: bold; /* Bold text for road names */
+}
+
+.state-change {
+  font-style: italic; /* Italic style for state changes */
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 1024px) {
+  .dashboard {
+    padding: 10rem; /* Increase padding for larger screens */
+  }
+
+  .dashboard h1 {
+    font-size: 3rem; /* Larger title font size for desktop */
+  }
+
+  .counts-container {
+    padding: 30px; /* More padding for counts container */
+  }
+
+  .timeline-container {
+    padding: 30px; /* More padding for timeline container */
+  }
+
+  .timeline-item {
+    padding: 15px 0; /* More padding for timeline items */
+  }
+}
